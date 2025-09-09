@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Longsword" load_steps=2 format=3 uid="uid://cl5dqb3i5o2y"]
+
+[ext_resource type="Script" uid="uid://c6sowgm3odpfq" path="res://strategies/longsword_strategy.gd" id="1_r1fcb"]
+
+[resource]
+script = ExtResource("1_r1fcb")
+slots = Array[int]([0, 1])
+stat_modifiers = Dictionary[int, int]({
+1: 3,
+2: 2
+})
+display_name = "Base sword"
+description = "testing sword"
+weight = 1.0
+gold_value = 9999
+metadata/_custom_type_script = "uid://c6sowgm3odpfq"

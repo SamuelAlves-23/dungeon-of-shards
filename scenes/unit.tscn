@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://cu3da4uc5ucwt"]
+
+[ext_resource type="Script" uid="uid://r4bfca621qni" path="res://scripts/unit.gd" id="1_o7ajc"]
+[ext_resource type="Resource" uid="uid://2ambiafppxet" path="res://data/unit_stats/base_unit_stats.tres" id="2_k673f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf63s"]
+
+[node name="Unit" type="CharacterBody2D"]
+script = ExtResource("1_o7ajc")
+dislpay_name = "Sample Unit"
+stats = ExtResource("2_k673f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lf63s")
