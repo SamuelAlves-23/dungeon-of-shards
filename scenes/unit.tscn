@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cu3da4uc5ucwt"]
+[gd_scene load_steps=6 format=3 uid="uid://cu3da4uc5ucwt"]
 
 [ext_resource type="Script" uid="uid://r4bfca621qni" path="res://scripts/unit.gd" id="1_o7ajc"]
 [ext_resource type="Resource" uid="uid://2ambiafppxet" path="res://data/unit_stats/base_unit_stats.tres" id="2_k673f"]
+[ext_resource type="Script" uid="uid://cyej03w47o0yq" path="res://strategies/equipment_strategy.gd" id="3_gic7v"]
+[ext_resource type="Resource" uid="uid://cl5dqb3i5o2y" path="res://data/equipment_stats/longsword_stats/base_longsword.tres" id="4_tb304"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lf63s"]
 
@@ -9,6 +11,14 @@
 script = ExtResource("1_o7ajc")
 dislpay_name = "Sample Unit"
 stats = ExtResource("2_k673f")
+equipment = Dictionary[int, ExtResource("3_gic7v")]({
+0: ExtResource("4_tb304"),
+1: null,
+2: null,
+3: null,
+4: null,
+5: null
+})
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lf63s")

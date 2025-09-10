@@ -29,18 +29,19 @@ var current_stats: Dictionary[Constants.STAT, int] = {
 	Constants.STAT.WIT: 0,
 }
 
-func get_total_stat(stat: Constants.STAT) -> void:
-	var stat_total: int = 0
-	var item_bonus: int = 0
-	for item : Equipment in equipment.values():
-		for bonus in item.stat_modifiers:
-			pass
+func _ready() -> void:
+	set_current_stats()
 
+func get_total_stat(stat: Constants.STAT) -> int:
+	var stat_total: int = stats.get_stat(stat)
+	for item : Equipment in equipment.values():
+		if item != null:
+			for bonus in item.stat_modifiers:
+				if bonus == stat:
+					stat_total += item.stat_modifiers[bonus]
+	return stat_total
 
 func set_current_stats() -> void:
-	var stat_total: int = 0
-	var item_bonus: int = 0
-	for stat in Constants.STAT:
-		for item in equipment:
-			pass
-		stat = stats.get_stat(stat)
+	for stat in Constants.STAT.values():
+		current_stats[stat] = get_total_stat(stat)
+		print(current_stats[stat])
