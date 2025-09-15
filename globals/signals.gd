@@ -7,3 +7,5 @@ signal damage_taken(unit)
 signal damage_dealt(unit)
 
 signal skill_used(unit, skill)
+
+signal stat_changed()

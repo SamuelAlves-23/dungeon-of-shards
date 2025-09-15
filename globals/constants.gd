@@ -16,3 +16,9 @@ enum STAT{
 	CONSTITUTION,
 	WIT
 }
+
+enum EFFECT{
+	PASSIVE,
+	BUFF,
+	DEBUFF
+}
