@@ -1,5 +1,6 @@
 extends Resource
 class_name Effect
+
 @export var display_name: String
 @export var type: Constants.EFFECT
 @export var duration: float = -1 # -1 = permanente

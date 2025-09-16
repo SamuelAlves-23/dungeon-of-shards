@@ -1,6 +1,7 @@
 extends Resource
 class_name Skill
 
+@export var type: Constants.EFFECT
 @export var display_name: String
 @export var description: String
 @export var action_cost: int

@@ -20,5 +20,7 @@ enum STAT{
 enum EFFECT{
 	PASSIVE,
 	BUFF,
-	DEBUFF
+	DEBUFF,
+	HEAL,
+	DAMAGE
 }

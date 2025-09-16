@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=2 format=3 uid="uid://dd5pl3ncw5bc"]
+
+[ext_resource type="Script" uid="uid://dgjo5ko0fl22s" path="res://strategies/skill_strategy.gd" id="1_hn2ul"]
+
+[resource]
+script = ExtResource("1_hn2ul")
+display_name = "Test attack"
+description = "Attack for testing. 100% damage."
+action_cost = 2
+metadata/_custom_type_script = "uid://dgjo5ko0fl22s"
