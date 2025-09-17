@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="StatusAttack" load_steps=5 format=3 uid="uid://dmnxr7qv8hhqr"]
+
+[ext_resource type="Script" uid="uid://qysct2fxrfu5" path="res://strategies/effect_strategy.gd" id="1_oamjb"]
+[ext_resource type="Script" uid="uid://obcrxmw8px4d" path="res://data/effects/skills/status_attack.gd" id="2_qy1uc"]
+[ext_resource type="Resource" uid="uid://8hqjm24wny0l" path="res://data/effects/damage/dexterity_attack.tres" id="2_yidnd"]
+[ext_resource type="Resource" uid="uid://b2t6i5jp0073w" path="res://data/effects/statuses/light_poison.tres" id="3_tcfid"]
+
+[resource]
+script = ExtResource("2_qy1uc")
+display_name = "Poison attack"
+description = "Deals a small amount of damage and inflicts poison."
+action_cost = 2
+cooldown = 2
+stat_requirements = Dictionary[int, int]({
+2: 12
+})
+effects = Array[ExtResource("1_oamjb")]([ExtResource("2_yidnd"), ExtResource("3_tcfid")])
+metadata/_custom_type_script = "uid://obcrxmw8px4d"

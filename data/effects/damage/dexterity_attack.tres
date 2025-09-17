@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="HPShift" load_steps=2 format=3 uid="uid://8hqjm24wny0l"]
+
+[ext_resource type="Script" uid="uid://doc17smvaigq7" path="res://data/effects/instant_hp_shift.gd" id="1_33waw"]
+
+[resource]
+script = ExtResource("1_33waw")
+scale = Dictionary[int, float]({
+0: 1.0
+})
+display_name = "Basic attack"
+description = "Basic attack that scales with dexterity."
+metadata/_custom_type_script = "uid://doc17smvaigq7"

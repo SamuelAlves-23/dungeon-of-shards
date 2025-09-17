@@ -14,11 +14,9 @@ class_name Unit
 	Constants.SLOT.LEGS : null
 }
 
-@export var passives: Array[Effect]
+@export var passives: Array
 
-@export var statuses: Dictionary[String, Effect]
-@export var buffs: Array[Effect]
-@export var debuffs: Array[Effect]
+@export var statuses: Dictionary
 
 var skills: Array[Skill]
 
@@ -53,11 +51,8 @@ func get_total_stat(stat: Constants.STAT) -> int:
 	for passive: Effect in passives:
 		stat_total += passive.stat_modifiers.get(stat, 0)
 	
-	for buff: Effect in buffs:
-		stat_total += buff.stat_modifiers.get(stat, 0)
-	
-	for debuff: Effect in debuffs:
-		stat_total += debuff.stat_modifiers.get(stat, 0)
+	for status: Effect in statuses:
+		stat_total += status.stat_modifiers.get(stat, 0)
 	
 	return stat_total
 

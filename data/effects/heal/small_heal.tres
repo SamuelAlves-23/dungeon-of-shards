@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="HPShift" load_steps=2 format=3 uid="uid://cb133wvspa6yi"]
+
+[ext_resource type="Script" uid="uid://doc17smvaigq7" path="res://data/effects/instant_hp_shift.gd" id="1_4fy6i"]
+
+[resource]
+script = ExtResource("1_4fy6i")
+scale = Dictionary[int, float]({
+2: 1.0
+})
+flat_amount = 10
+is_heal = true
+display_name = "Small heal"
+description = "Heals a small hp amount."
+metadata/_custom_type_script = "uid://doc17smvaigq7"

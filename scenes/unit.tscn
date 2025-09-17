@@ -1,13 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://cu3da4uc5ucwt"]
+[gd_scene load_steps=8 format=3 uid="uid://cu3da4uc5ucwt"]
 
 [ext_resource type="Script" uid="uid://r4bfca621qni" path="res://scripts/unit.gd" id="1_o7ajc"]
 [ext_resource type="Resource" uid="uid://2ambiafppxet" path="res://data/unit_stats/base_unit_stats.tres" id="2_k673f"]
 [ext_resource type="Script" uid="uid://cyej03w47o0yq" path="res://strategies/equipment_strategy.gd" id="3_gic7v"]
 [ext_resource type="Resource" uid="uid://cl5dqb3i5o2y" path="res://data/equipment_stats/longsword_stats/base_longsword.tres" id="4_tb304"]
 [ext_resource type="Script" uid="uid://qysct2fxrfu5" path="res://strategies/effect_strategy.gd" id="5_oee7j"]
-[ext_resource type="Resource" uid="uid://ccxb2jgiuxwwo" path="res://data/effects/passives/test_passive.tres" id="6_7gdr1"]
-[ext_resource type="Resource" uid="uid://cdpdfn447m6rb" path="res://data/effects/buffs/test_buff.tres" id="7_dh01e"]
-[ext_resource type="Resource" uid="uid://8x85vqpovmdy" path="res://data/effects/debuffs/test_debuff.tres" id="8_b0dep"]
+
+[sub_resource type="Resource" id="Resource_tb304"]
+script = ExtResource("5_oee7j")
+display_name = "Test passive"
+description = "Passive for testing."
+metadata/_custom_type_script = "uid://qysct2fxrfu5"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lf63s"]
 
@@ -23,9 +26,7 @@ equipment = Dictionary[int, ExtResource("3_gic7v")]({
 4: null,
 5: null
 })
-passives = Array[ExtResource("5_oee7j")]([ExtResource("6_7gdr1")])
-buffs = Array[ExtResource("5_oee7j")]([ExtResource("7_dh01e")])
-debuffs = Array[ExtResource("5_oee7j")]([ExtResource("8_b0dep")])
+passives = Array[ExtResource("5_oee7j")]([SubResource("Resource_tb304")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lf63s")
