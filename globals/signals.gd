@@ -3,8 +3,7 @@ extends Node
 signal turn_started(unit)
 signal turn_ended(unit)
 
-signal damage_taken(unit)
-signal damage_dealt(unit)
+signal hp_changed(unit, amount)
 
 signal skill_used(unit, skill)
 

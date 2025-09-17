@@ -26,7 +26,7 @@ equipment = Dictionary[int, ExtResource("3_gic7v")]({
 4: null,
 5: null
 })
-passives = Array[ExtResource("5_oee7j")]([SubResource("Resource_tb304")])
+passives = [SubResource("Resource_tb304")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lf63s")

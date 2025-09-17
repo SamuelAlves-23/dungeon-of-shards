@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CumulativeDamage" load_steps=2 format=3 uid="uid://c4q6wrqouqrqv"]
 
-[ext_resource type="Script" uid="uid://bhfcrub7rh6aa" path="res://data/effects/cumulative_damage.gd" id="1_udglk"]
+[ext_resource type="Script" uid="uid://bhfcrub7rh6aa" path="res://data/effects/cumulative_hp_shift.gd" id="1_udglk"]
 
 [resource]
 script = ExtResource("1_udglk")

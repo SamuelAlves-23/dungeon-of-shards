@@ -14,7 +14,7 @@ class_name Unit
 	Constants.SLOT.LEGS : null
 }
 
-@export var passives: Array
+@export var passives: Array[Effect]
 
 @export var statuses: Dictionary
 
@@ -41,6 +41,7 @@ func _ready() -> void:
 	
 	Signals.stat_changed.connect(_update_calculated_stats)
 	set_current_stats()
+	_update_calculated_stats()
 
 func get_total_stat(stat: Constants.STAT) -> int:
 	var stat_total: int = stats.get_stat(stat)
@@ -48,8 +49,8 @@ func get_total_stat(stat: Constants.STAT) -> int:
 		if item != null:
 			stat_total += item.stat_modifiers.get(stat, 0)
 	
-	for passive: Effect in passives:
-		stat_total += passive.stat_modifiers.get(stat, 0)
+	#for passive: Effect in passives:
+		#stat_total += passive.stat_modifiers.get(stat, 0)
 	
 	for status: Effect in statuses:
 		stat_total += status.stat_modifiers.get(stat, 0)
