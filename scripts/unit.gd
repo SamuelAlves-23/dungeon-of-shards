@@ -16,6 +16,7 @@ class_name Unit
 
 @export var passives: Array[Effect]
 
+@export var statuses: Dictionary[String, Effect]
 @export var buffs: Array[Effect]
 @export var debuffs: Array[Effect]
 
