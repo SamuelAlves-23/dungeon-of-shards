@@ -28,15 +28,15 @@ func get_stat(stat: Constants.STAT) -> int:
 			return 0
 
 func set_stat(stat: Constants.STAT, value: int) -> void:
-	var changed := false
+	var _changed := false
 	match stat:
-		Constants.STAT.STRENGTH: strength = value; changed = true
-		Constants.STAT.DEXTERITY: dexterity = value; changed = true
+		Constants.STAT.STRENGTH: strength = value; _changed = true
+		Constants.STAT.DEXTERITY: dexterity = value; _changed = true
 		Constants.STAT.INTELLIGENCE: intelligence = value
-		Constants.STAT.CONSTITUTION: constitution = value; changed = true
-		Constants.STAT.WIT: wit = value; changed = true
+		Constants.STAT.CONSTITUTION: constitution = value; _changed = true
+		Constants.STAT.WIT: wit = value; _changed = true
 		_: push_error("Stat no reconocido: %s" % str(stat))
 	
-	if changed:
-		Signals.stat_changed.emit()
+	if _changed:
+		Signals.stat__changed.emit()
 #endregion

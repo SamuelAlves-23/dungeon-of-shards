@@ -32,7 +32,8 @@ var current_stats: Dictionary[Constants.STAT, int] = {
 
 #region CALCULATED STATS
 
-var health: int
+var max_hp: int
+var current_hp: int
 var load_capacity: int
 var crit_rate: float
 var crit_damage: float
@@ -40,8 +41,8 @@ var evasion: float
 #endregion
 
 func _ready() -> void:
-	
 	Signals.stat_changed.connect(_update_calculated_stats)
+	Signals.hp_changed.connect(hp_changed)
 	set_current_stats()
 	_update_calculated_stats()
 
@@ -71,24 +72,28 @@ func _update_calculated_stats() -> void:
 	_update_crit_rate()
 	_update_evasion()
 	_update_load_capacity()
-	_update_max_health()
-		
+	_update_max_max_hp()
 
-func _update_max_health() -> void:
-	health = ceil((current_stats[Constants.STAT.CONSTITUTION] * 5) + (level * 10))
+func _update_max_max_hp() -> void:
+	max_hp = ceil((current_stats[Constants.STAT.CONSTITUTION] * Constants.hp_const_scale) + (level * Constants.hp_level_scale))
 
 func _update_load_capacity() -> void:
-	load_capacity = current_stats[Constants.STAT.STRENGTH] * 10
+	load_capacity = ceil(current_stats[Constants.STAT.STRENGTH] * Constants.load_cap_str_scale)
 
 func _update_crit_rate() -> void:
-	crit_rate = current_stats[Constants.STAT.WIT] * 0.01
+	crit_rate = current_stats[Constants.STAT.WIT] * Constants.crit_rate_wit_scale
 
 func _update_crit_damage() -> void:
-	crit_damage = (current_stats[Constants.STAT.STRENGTH] * 0.005) + (current_stats[Constants.STAT.DEXTERITY] * 0.02)
+	crit_damage = (current_stats[Constants.STAT.STRENGTH] * Constants.crit_dmg_str_scale) + (current_stats[Constants.STAT.DEXTERITY] * Constants.crit_dmg_dex_scale)
 
 func _update_evasion() -> void:
-	evasion = (current_stats[Constants.STAT.DEXTERITY] * 0.002) + (current_stats[Constants.STAT.WIT] * 0.005) + (level * 0.001)
+	evasion = (current_stats[Constants.STAT.DEXTERITY] * Constants.evasion_dex_scale) + (current_stats[Constants.STAT.WIT] * Constants.evasion_wit_scale) + (level * Constants.evasion_level_scale)
 #endregion
+
+func hp_changed(target, amount) -> void:
+	if target == self:
+		current_hp -= amount
+		print(current_hp)
 
 ## TESTING BUTTON
 func _on_button_pressed() -> void:
