@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Skill" load_steps=4 format=3 uid="uid://yy4illstn0lh"]
+
+[ext_resource type="Script" uid="uid://qysct2fxrfu5" path="res://strategies/effect_strategy.gd" id="1_5urqn"]
+[ext_resource type="Resource" uid="uid://d0m3auu7ge13t" path="res://data/effects/damage/strength_attack.tres" id="2_4bue7"]
+[ext_resource type="Script" uid="uid://dgjo5ko0fl22s" path="res://strategies/skill_strategy.gd" id="2_kar86"]
+
+[resource]
+script = ExtResource("2_kar86")
+display_name = "Basic attack"
+description = "Testing attack"
+action_cost = 2
+effects = Array[ExtResource("1_5urqn")]([ExtResource("2_4bue7")])
+metadata/_custom_type_script = "uid://dgjo5ko0fl22s"

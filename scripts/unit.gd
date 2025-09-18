@@ -4,6 +4,8 @@ class_name Unit
 @export var dislpay_name: String
 @export var stats: UnitStats
 @export var level: int = 1
+@export var testing_skill: Skill
+@export var testing_target: Unit
 
 @export var equipment: Dictionary[Constants.SLOT, Equipment] = {
 	Constants.SLOT.RIGHT_HAND : null,
@@ -87,3 +89,7 @@ func _update_crit_damage() -> void:
 func _update_evasion() -> void:
 	evasion = (current_stats[Constants.STAT.DEXTERITY] * 0.002) + (current_stats[Constants.STAT.WIT] * 0.005) + (level * 0.001)
 #endregion
+
+## TESTING BUTTON
+func _on_button_pressed() -> void:
+	testing_skill.use(testing_target, self)

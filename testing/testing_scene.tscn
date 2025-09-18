@@ -1,9 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvr43fbicox78"]
+[gd_scene load_steps=3 format=3 uid="uid://bvr43fbicox78"]
 
 [ext_resource type="PackedScene" uid="uid://cu3da4uc5ucwt" path="res://scenes/unit.tscn" id="1_gs37m"]
+[ext_resource type="Resource" uid="uid://dd5pl3ncw5bc" path="res://data/skills/basic_skills/test_attack.tres" id="2_rx4tx"]
 
 [node name="TestingScene" type="Node2D"]
 
-[node name="Unit" parent="." instance=ExtResource("1_gs37m")]
+[node name="Player" parent="." node_paths=PackedStringArray("testing_target") instance=ExtResource("1_gs37m")]
+position = Vector2(335, 307)
+level = null
+testing_skill = ExtResource("2_rx4tx")
+testing_target = NodePath("../Unit2")
+statuses = null
 
 [node name="Unit2" parent="." instance=ExtResource("1_gs37m")]
+position = Vector2(711, 318)
+level = null
+statuses = null

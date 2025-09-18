@@ -1,7 +1,7 @@
 extends DamageHeal
 class_name HPShift
 
-func effect(target) -> void:
+func effect(target, owner) -> void:
 	var total_amount = flat_amount
 	for stat in scale:
 		total_amount += (owner.get_total_stat(stat) * scale[stat])
