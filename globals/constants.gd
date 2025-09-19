@@ -33,6 +33,8 @@ enum BATTLE_STATE{
 	LOSE
 }
 
+@onready var stats_resource: UnitStats = preload("uid://2ambiafppxet")
+
 #region STAT SCALING
 @onready var hp_const_scale: float = 5
 @onready var hp_level_scale: float = 10

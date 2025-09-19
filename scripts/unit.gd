@@ -41,6 +41,7 @@ var evasion: float
 #endregion
 
 func _ready() -> void:
+	stats = Constants.stats_resource.duplicate()
 	Signals.stat_changed.connect(_update_calculated_stats)
 	Signals.hp_changed.connect(hp_changed)
 	set_current_stats()

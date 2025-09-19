@@ -11,8 +11,12 @@ extends Node
 @onready var is_combat_active: bool = false
 @onready var current_state : Constants.BATTLE_STATE = Constants.BATTLE_STATE.SETUP
 
-func initialize(actors: Array) -> void:
-	turn_order = actors.duplicate()
-	turn_order.sort_custom(func(a,b): return a.speed > b.speed)
+
+func _ready() -> void:
+	initialize()
+
+func initialize() -> void:
+	turn_order += players.duplicate() + enemies.duplicate()
+	turn_order.sort_custom(func(a,b): return a.stats.wit > b.stats.wit)
 	is_combat_active = true
 	

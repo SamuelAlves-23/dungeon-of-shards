@@ -1,14 +1,40 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvr43fbicox78"]
+[gd_scene load_steps=7 format=3 uid="uid://bvr43fbicox78"]
 
 [ext_resource type="PackedScene" uid="uid://cu3da4uc5ucwt" path="res://scenes/unit.tscn" id="1_gs37m"]
+[ext_resource type="Script" uid="uid://d21fqcaek8mbe" path="res://strategies/unit_stats_strategy.gd" id="2_bsox1"]
 [ext_resource type="Resource" uid="uid://dd5pl3ncw5bc" path="res://data/skills/basic_skills/test_attack.tres" id="2_rx4tx"]
+[ext_resource type="PackedScene" uid="uid://cq84elbprbkvi" path="res://scenes/battle_manager.tscn" id="3_cx6l1"]
+
+[sub_resource type="Resource" id="Resource_qxnod"]
+script = ExtResource("2_bsox1")
+strength = 10
+dexterity = 10
+intelligence = 10
+constitution = 10
+wit = 10
+metadata/_custom_type_script = "uid://d21fqcaek8mbe"
+
+[sub_resource type="Resource" id="Resource_pqjbp"]
+script = ExtResource("2_bsox1")
+strength = 10
+dexterity = 10
+intelligence = 10
+constitution = 10
+wit = 11
+metadata/_custom_type_script = "uid://d21fqcaek8mbe"
 
 [node name="TestingScene" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("testing_target") instance=ExtResource("1_gs37m")]
 position = Vector2(335, 307)
+stats = SubResource("Resource_qxnod")
 testing_skill = ExtResource("2_rx4tx")
 testing_target = NodePath("../Unit2")
 
 [node name="Unit2" parent="." instance=ExtResource("1_gs37m")]
 position = Vector2(711, 318)
+stats = SubResource("Resource_pqjbp")
+
+[node name="BattleManager" parent="." node_paths=PackedStringArray("players", "enemies") instance=ExtResource("3_cx6l1")]
+players = [NodePath("../Player")]
+enemies = [NodePath("../Unit2")]

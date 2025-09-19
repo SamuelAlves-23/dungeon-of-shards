@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://d21fqcaek8mbe" path="res://strategies/unit_stats_strategy.gd" id="1_aywab"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_aywab")
-display_name = "Base stats"
-level = 1
 strength = 10
 dexterity = 10
 intelligence = 10
