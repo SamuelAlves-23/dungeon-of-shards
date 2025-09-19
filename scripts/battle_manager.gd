@@ -16,7 +16,7 @@ func _ready() -> void:
 	initialize()
 
 func initialize() -> void:
-	turn_order += players.duplicate() + enemies.duplicate()
-	turn_order.sort_custom(func(a,b): return a.stats.wit > b.stats.wit)
+	turn_order += players.duplicate(true) + enemies.duplicate(true)
+	turn_order.sort_custom(func(a,b): return a.total_stats[Constants.STAT.WIT] > b.total_stats[Constants.STAT.WIT])
 	is_combat_active = true
 	
