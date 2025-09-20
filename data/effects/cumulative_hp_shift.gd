@@ -6,7 +6,7 @@ class_name CumulativeHPShift
 var target: Unit
 
 
-func effect(target) -> void:
+func effect(target, owner) -> void:
 	var total_amount = base_damage
 	for stat in stat_modifiers:
 		total_amount += (owner.get_total_stat(stat) * stat_modifiers[stat])

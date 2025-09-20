@@ -1,7 +1,7 @@
 extends Node
 
-signal turn_started(unit)
-signal turn_ended(unit)
+signal turn_started()
+signal turn_ended()
 
 signal hp_changed(unit, amount)
 

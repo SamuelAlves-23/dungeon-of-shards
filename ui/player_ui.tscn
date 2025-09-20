@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://n6wj65tbb7lk"]
+
+[ext_resource type="Script" uid="uid://x4j41033ig2s" path="res://scripts/player_ui.gd" id="1_cfom6"]
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cfom6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "END TURN"
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

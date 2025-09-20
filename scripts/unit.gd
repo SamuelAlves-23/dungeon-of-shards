@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Unit
 
-@export var dislpay_name: String
+@export var display_name: String
 #@export var stats: UnitStats
 @export var level: int = 1
 @export var testing_skill: Skill

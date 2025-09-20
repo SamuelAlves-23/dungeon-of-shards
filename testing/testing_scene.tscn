@@ -8,6 +8,7 @@
 
 [node name="Player" parent="." node_paths=PackedStringArray("testing_target") instance=ExtResource("1_gs37m")]
 position = Vector2(335, 307)
+display_name = "Player"
 testing_skill = ExtResource("2_rx4tx")
 testing_target = NodePath("../Unit2")
 char_stats = Dictionary[int, int]({
@@ -20,6 +21,7 @@ char_stats = Dictionary[int, int]({
 
 [node name="Unit2" parent="." instance=ExtResource("1_gs37m")]
 position = Vector2(711, 318)
+display_name = "Sample enemy"
 char_stats = Dictionary[int, int]({
 0: 10,
 1: 10,
