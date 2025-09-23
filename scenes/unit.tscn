@@ -16,7 +16,6 @@ metadata/_custom_type_script = "uid://qysct2fxrfu5"
 
 [node name="Unit" type="CharacterBody2D"]
 script = ExtResource("1_o7ajc")
-dislpay_name = "Sample Unit"
 equipment = Dictionary[int, ExtResource("3_gic7v")]({
 0: ExtResource("4_tb304"),
 1: null,
@@ -36,8 +35,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "TEST SKILL"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PlayerUI" parent="CanvasLayer" instance=ExtResource("5_tb304")]
+[node name="PlayerUI" parent="." instance=ExtResource("5_tb304")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

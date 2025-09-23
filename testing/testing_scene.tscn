@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvr43fbicox78"]
+[gd_scene load_steps=5 format=3 uid="uid://bvr43fbicox78"]
 
 [ext_resource type="PackedScene" uid="uid://cu3da4uc5ucwt" path="res://scenes/unit.tscn" id="1_gs37m"]
 [ext_resource type="Resource" uid="uid://dd5pl3ncw5bc" path="res://data/skills/basic_skills/test_attack.tres" id="2_rx4tx"]
 [ext_resource type="PackedScene" uid="uid://cq84elbprbkvi" path="res://scenes/battle_manager.tscn" id="3_cx6l1"]
+[ext_resource type="PackedScene" uid="uid://b7lw4cw31pi2t" path="res://scenes/skill_button.tscn" id="4_bsox1"]
 
 [node name="TestingScene" type="Node2D"]
 
@@ -33,3 +34,9 @@ char_stats = Dictionary[int, int]({
 [node name="BattleManager" parent="." node_paths=PackedStringArray("players", "enemies") instance=ExtResource("3_cx6l1")]
 players = [NodePath("../Player")]
 enemies = [NodePath("../Unit2")]
+
+[node name="SkillButton" parent="." instance=ExtResource("4_bsox1")]
+offset_left = 573.0
+offset_top = 356.0
+offset_right = 573.0
+offset_bottom = 356.0

@@ -7,6 +7,7 @@ class_name Skill
 @export var cooldown: int
 @export var stat_requirements: Dictionary[Constants.STAT, int]
 @export var effects: Array[Effect]
+@export var icon: Texture2D
 
 var owner : Unit
 
