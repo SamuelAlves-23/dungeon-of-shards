@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cu3da4uc5ucwt"]
+[gd_scene load_steps=7 format=3 uid="uid://cu3da4uc5ucwt"]
 
 [ext_resource type="Script" uid="uid://r4bfca621qni" path="res://scripts/unit.gd" id="1_o7ajc"]
 [ext_resource type="Script" uid="uid://cyej03w47o0yq" path="res://strategies/equipment_strategy.gd" id="3_gic7v"]
 [ext_resource type="Resource" uid="uid://cl5dqb3i5o2y" path="res://data/equipment_stats/longsword_stats/base_longsword.tres" id="4_tb304"]
 [ext_resource type="Script" uid="uid://qysct2fxrfu5" path="res://strategies/effect_strategy.gd" id="5_oee7j"]
-[ext_resource type="PackedScene" uid="uid://n6wj65tbb7lk" path="res://ui/player_ui.tscn" id="5_tb304"]
 
 [sub_resource type="Resource" id="Resource_tb304"]
 script = ExtResource("5_oee7j")
@@ -34,7 +33,5 @@ visible = false
 offset_right = 8.0
 offset_bottom = 8.0
 text = "TEST SKILL"
-
-[node name="PlayerUI" parent="." instance=ExtResource("5_tb304")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

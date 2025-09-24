@@ -34,6 +34,7 @@ enum BATTLE_STATE{
 }
 
 @onready var stats_resource: UnitStats = preload("uid://2ambiafppxet")
+@onready var skilll_btn_scene: PackedScene = preload("uid://b7lw4cw31pi2t")
 
 #region STAT SCALING
 @onready var hp_const_scale: float = 5

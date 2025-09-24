@@ -8,7 +8,7 @@
 [node name="TestingScene" type="Node2D"]
 
 [node name="Player" parent="." node_paths=PackedStringArray("testing_target") instance=ExtResource("1_gs37m")]
-position = Vector2(335, 307)
+position = Vector2(125, 190)
 display_name = "Player"
 testing_skill = ExtResource("2_rx4tx")
 testing_target = NodePath("../Unit2")
@@ -21,7 +21,7 @@ char_stats = Dictionary[int, int]({
 })
 
 [node name="Unit2" parent="." instance=ExtResource("1_gs37m")]
-position = Vector2(711, 318)
+position = Vector2(597, 216)
 display_name = "Sample enemy"
 char_stats = Dictionary[int, int]({
 0: 10,
@@ -36,7 +36,7 @@ players = [NodePath("../Player")]
 enemies = [NodePath("../Unit2")]
 
 [node name="SkillButton" parent="." instance=ExtResource("4_bsox1")]
-offset_left = 573.0
-offset_top = 356.0
-offset_right = 573.0
-offset_bottom = 356.0
+offset_left = 321.0
+offset_top = 135.0
+offset_right = 321.0
+offset_bottom = 135.0
