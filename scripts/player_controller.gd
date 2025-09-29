@@ -1,0 +1,2 @@
+extends UnitController
+class_name PlayerController

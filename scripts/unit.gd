@@ -103,7 +103,3 @@ func hp_changed(target, amount) -> void:
 	if target == self:
 		current_hp -= amount
 		print(current_hp)
-
-## TESTING BUTTON
-func _on_button_pressed() -> void:
-	testing_skill.use(testing_target, self)
