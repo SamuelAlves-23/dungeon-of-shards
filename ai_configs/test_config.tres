@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AIConfig" load_steps=2 format=3 uid="uid://cs8sfq61smyax"]
+
+[ext_resource type="Script" uid="uid://tx5ath8k4ips" path="res://ai_configs/ai_config.gd" id="1_q6lli"]
+
+[resource]
+script = ExtResource("1_q6lli")
+rules = Array[Dictionary]([{}, {}, {}])
+metadata/_custom_type_script = "uid://tx5ath8k4ips"

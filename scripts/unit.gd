@@ -49,11 +49,26 @@ var crit_damage: float
 var evasion: float
 #endregion
 
+var ai_config
+var controller
+
 func _ready() -> void:
+	if ai_config:
+		controller = AIController.new(self, ai_config)
+	
 	Signals.stat_changed.connect(_update_calculated_stats)
 	Signals.hp_changed.connect(hp_changed)
 	set_total_stats()
 	_update_calculated_stats()
+
+func take_turn() -> void:
+	if controller:
+		controller.take_turn()
+	else:
+		print("Waiting player input: ", str(display_name))
+
+func use_skill(skill_name: String) -> void:
+	print("Use" + skill_name)
 
 func get_total_stat(stat: Constants.STAT) -> int:
 	var stat_total: int = char_stats[stat]

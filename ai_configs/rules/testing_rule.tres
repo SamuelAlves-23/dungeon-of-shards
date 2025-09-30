@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Rule" load_steps=2 format=3 uid="uid://cdwy38q0ia0vu"]
+
+[ext_resource type="Script" uid="uid://2tgx87iulrdc" path="res://ai_configs/rules/rule.gd" id="1_3yyjg"]
+
+[resource]
+script = ExtResource("1_3yyjg")
+metadata/_custom_type_script = "uid://2tgx87iulrdc"
