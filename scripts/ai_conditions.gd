@@ -1,5 +1,14 @@
 extends Node
 
+@onready var conditions: Dictionary = {
+	"health_above" :
+		func(unit: Unit, params: Dictionary) -> bool:
+			return unit.current_hp >= unit.max_hp * params.get("threshold", 0.5),
+	"health_below" :
+		func(unit: Unit, params: Dictionary) -> bool:
+			return unit.current_hp < unit.max_hp * params.get("threshold", 0.1),
+}
+
 static func health_above(unit: Unit, params: Dictionary) -> bool:
 	return unit.current_hp >= unit.max_hp * params.get("threshold", 0.5)
 
@@ -11,11 +20,6 @@ static func health_between(unit: Unit, params: Dictionary) -> bool:
 	var max_val = params.get("max", 0.5)
 	var ratio = float(unit.health) / float(unit.max_health)
 	return ratio >= min_val and ratio < max_val
-
-
-
-
-
 
 
 # ADVANCED
